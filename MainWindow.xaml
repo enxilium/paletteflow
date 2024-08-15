@@ -1,0 +1,60 @@
+﻿<Window x:Class="paletteflow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:paletteflow"
+        mc:Ignorable="d"
+        Title="Paletteflow" 
+        Height="450" 
+        Width="800"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+>
+    <Border CornerRadius="25" Padding="6" Background="#f5f7fa">
+        <Grid>
+            <!-- Title Text -->
+            <TextBlock x:Name="TitleTextBlock"
+                       Text="Paletteflow"
+                       FontFamily="Josefin Slab"
+                       FontSize="40"
+                       Foreground="#100458"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Opacity="1"/>
+
+            <!-- Slogan Text -->
+            <TextBlock x:Name="SloganTextBlock"
+                       Text="creativity starts with a single stroke"
+                       FontFamily="Josefin Slab"
+                       FontSize="14"
+                       Foreground="#100458"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Margin="0,60,0,0"
+                       Opacity="1"/>
+
+            <!-- Enter Button -->
+            <Button x:Name="EnterButton"
+                    Content="Enter"
+                    FontFamily="Josefin Sans"
+                    FontSize="12"
+                    Foreground="#100458"
+                    Background="Transparent"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,0,50"
+                    RenderTransformOrigin="0.5,0.5"
+                    BorderBrush="Transparent"
+                    Click="EnterButton_Click"
+                    DragEnter="EnterButton_DragEnter"
+                    DragLeave="EnterButton_DragLeave">
+
+                <Button.RenderTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </Button.RenderTransform>
+            </Button>
+        </Grid>
+    </Border>
+</Window>
