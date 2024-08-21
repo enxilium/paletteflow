@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="paletteflow.Views.Home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:paletteflow.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border CornerRadius="25" Padding="6" Background="#f5f7fa" Panel.ZIndex="0">
+        <Viewbox>
+            <Grid>
+                <!-- Message -->
+                <!-- Bg Images -->
+                <Image 
+                        Source="../Resources/Images/Palette.png"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Height="454" Width="740" Margin="0,-16,0,0"
+                        Panel.ZIndex="0"/>
+
+                <Button Command="{Binding SavedPalettesNavigateCommand}" Style="{StaticResource ImageButtonStyle}" Width="90" Height="90" Margin="330,30,338,298">
+                    <Image Source="/Resources/Images/SavedPalettesButton.png" Stretch="Uniform"/>
+                </Button>
+
+                <Button Command="{Binding NewPaletteNavigateCommand}" Style="{StaticResource ImageButtonStyle}" Height="90" Width="90" Margin="455,95,243,253">
+                    <Image Source="/Resources/Images/NewPaletteButton.png" Stretch="Uniform"/>
+                </Button>
+
+                <Button Command="{Binding InformationNavigateCommand}" Style="{StaticResource ImageButtonStyle}" Height="90" Width="90" Margin="466,209,212,139">
+                    <Image Source="/Resources/Images/ColorInfoButton.png" Stretch="Uniform"/>
+                </Button>
+
+                <Button Command="{Binding AboutNavigateCommand}" Style="{StaticResource ImageButtonStyle}" Height="90" Width="90" Margin="376,287,302,51">
+                    <Image Source="/Resources/Images/AboutButton.png" Stretch="Uniform"/>
+                </Button>
+                <Button Command="{Binding ContactNavigateCommand}" Style="{StaticResource ImageButtonStyle}" Height="90" Width="90" Margin="252,269,416,59">
+                    <Image Source="/Resources/Images/ContactButton.png" Stretch="Uniform"/>
+                </Button>
+
+                <!-- Text -->
+                <TextBlock Foreground="{StaticResource DefaultBrush}" Text="Menu" Style="{StaticResource HeaderTextStyle}" Margin="309,188,317,197" FontSize="50"/>
+                <TextBlock Foreground="{StaticResource DefaultBrush}" Text="Welcome to Paletteflow." Margin="237,241,333,178" FontSize="20"/>
+
+            </Grid>
+        </Viewbox>
+    </Border>
+</UserControl>

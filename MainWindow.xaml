@@ -4,57 +4,87 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:paletteflow"
+        xmlns:views="clr-namespace:paletteflow.Views"
+        xmlns:viewModels="clr-namespace:paletteflow.ViewModels"
         mc:Ignorable="d"
         Title="Paletteflow" 
         Height="450" 
         Width="800"
         WindowStyle="None"
+        MouseLeftButtonDown="MainWindow_OnMouseLeftButtonDown"
         AllowsTransparency="True"
         Background="Transparent"
 >
-    <Border CornerRadius="25" Padding="6" Background="#f5f7fa">
+    <WindowChrome.WindowChrome>
+        <WindowChrome 
+            GlassFrameThickness="0" 
+            CornerRadius="0" 
+            CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+
+    <Border CornerRadius="25" Padding="0" Background="#f5f7fa">
         <Grid>
-            <!-- Title Text -->
-            <TextBlock x:Name="TitleTextBlock"
-                       Text="Paletteflow"
-                       FontFamily="Josefin Slab"
-                       FontSize="40"
-                       Foreground="#100458"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       Opacity="1"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-            <!-- Slogan Text -->
-            <TextBlock x:Name="SloganTextBlock"
-                       Text="creativity starts with a single stroke"
-                       FontFamily="Josefin Slab"
-                       FontSize="14"
-                       Foreground="#100458"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       Margin="0,60,0,0"
-                       Opacity="1"/>
+            <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}"/>
 
-            <!-- Enter Button -->
-            <Button x:Name="EnterButton"
-                    Content="Enter"
-                    FontFamily="Josefin Sans"
-                    FontSize="12"
-                    Foreground="#100458"
-                    Background="Transparent"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Bottom"
-                    Margin="0,0,0,50"
-                    RenderTransformOrigin="0.5,0.5"
-                    BorderBrush="Transparent"
-                    Click="EnterButton_Click"
-                    DragEnter="EnterButton_DragEnter"
-                    DragLeave="EnterButton_DragLeave">
+            <!-- Window Control Buttons -->
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <!-- Minimize Button -->
+                <Button Style="{StaticResource TitleBarButtonStyle}" Width="40" Height="40" Click="MinimizeButton_Click">
+                    <TextBlock Foreground="{StaticResource DefaultBrush}" Text="🗕︎" Margin="14,14,0,0"/>
+                </Button>
+                <!-- Maximize/Restore Button -->
+                <Button Style="{StaticResource TitleBarButtonStyle}" Width="40" Height="40" Click="MaximizeButton_Click">
+                    <TextBlock Foreground="{StaticResource DefaultBrush}" x:Name="MaximizeText" Text="🗖︎" Margin="14,14,0,0"/>
+                </Button>
+                <!-- Close Button -->
+                <Button Style="{StaticResource CloseButtonStyle}" Width="40" Height="40" Click="CloseButton_Click">
+                    <TextBlock Foreground="{StaticResource DefaultBrush}" Text="🗙︎" Margin="14,14,0,0"/>
+                </Button>
+            </StackPanel>
 
-                <Button.RenderTransform>
-                    <ScaleTransform ScaleX="1" ScaleY="1"/>
-                </Button.RenderTransform>
-            </Button>
+            <Grid.Resources>
+                <DataTemplate DataType="{x:Type viewModels:LaunchViewModel}">
+                    <views:Launch/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewModels:LoadingViewModel}">
+                    <views:Loading/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewModels:HomeViewModel}">
+                    <views:Home/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewModels:NewPaletteViewModel}">
+                    <views:NewPalette/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewModels:SavedPaletteViewModel}">
+                    <views:SavedPalettes/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewModels:InformationViewModel}">
+                    <views:Information/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewModels:AboutViewModel}">
+                    <views:About/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewModels:ContactViewModel}">
+                    <views:Contact/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewModels:Question2ViewModel}">
+                    <views:Question2/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewModels:Question3ViewModel}">
+                    <views:Question3/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewModels:DisplayNewPaletteViewModel}">
+                    <views:DisplayNewPalette/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewModels:UpdateExistingPaletteViewModel}">
+                    <views:UpdateExistingPalette/>
+                </DataTemplate>
+            </Grid.Resources>
         </Grid>
     </Border>
 </Window>

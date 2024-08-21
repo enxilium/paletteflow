@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using System.Windows.Input;
+using paletteflow.ViewModels;
 
 namespace paletteflow
 {
@@ -12,19 +14,34 @@ namespace paletteflow
             InitializeComponent();
         }
 
-        private void EnterButton_Click(object sender, RoutedEventArgs e)
+        private void MainWindow_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            // Go to home screen
+            DragMove();
         }
 
-        private void EnterButton_DragEnter(object sender, DragEventArgs e)
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            EnterButton.FontSize = 13;
+            Close();
         }
 
-        private void EnterButton_DragLeave(object sender, DragEventArgs e)
+        private void MaximizeButton_Click(object sender, RoutedEventArgs e)
         {
-            EnterButton.FontSize = 12;  
+            if (WindowState == WindowState.Normal) {
+                WindowState = WindowState.Maximized;
+                MaximizeText.Text = "🗗︎";
+            }
+            else
+            {
+                WindowState = WindowState.Normal;
+                MaximizeText.Text = "🗖";
+            }
+                
+
+        }
+
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
         }
     }
 }

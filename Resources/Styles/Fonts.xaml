@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <FontFamily x:Key="JosefinSlab">/Resources/Fonts/#Josefin Slab</FontFamily>
+    <FontFamily x:Key="JosefinSlabItalic" >/Resources/Fonts/#Josefin Slab Italic</FontFamily>
+    <FontFamily x:Key="JosefinSans" >/Resources/Fonts/#Josefin Sans</FontFamily>
+    <FontFamily x:Key="JosefinSansItalic" >/Resources/Fonts/#Josefin Sans Italic</FontFamily>
+
+    <Style TargetType="{x:Type Control}" x:Key="DefaultStyle">
+        <Setter Property="FontFamily" Value="{StaticResource JosefinSans}"></Setter>
+    </Style>
+    
+    <Style TargetType="{x:Type TextBlock}" x:Key="TextBlockDefaultStyle">
+        <Setter Property="FontFamily" Value="{StaticResource JosefinSans}"></Setter>
+        <Setter Property="FontWeight" Value="Regular"></Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DefaultStyle}"/>
+    <Style TargetType="{x:Type Label}" BasedOn="{StaticResource DefaultStyle}"/>
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource DefaultStyle}"/>
+    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockDefaultStyle}"/>
+    <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource DefaultStyle}"/>
+</ResourceDictionary>

@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="paletteflow.Views.About"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:paletteflow.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border CornerRadius="25" Padding="6" Background="#f5f7fa" Panel.ZIndex="0">
+        <Grid>
+            <!-- Message -->
+            <TextBlock x:Name="Message"
+                       Text="About"
+                       FontFamily="{StaticResource JosefinSlab}"
+                       FontSize="30"
+                       Foreground="#100458"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Opacity="1"
+                       Margin="0,0,0,35"
+                       Panel.ZIndex="999"/>
+            <!-- Bg Images -->
+            <Image 
+                Source="../Resources/Images/Ellipse-5.png"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Margin="0,60,125,35">
+            </Image>
+
+            <Image 
+                Source="../Resources/Images/Ellipse-4.png"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,60,0,35">
+            </Image>
+
+            <Image 
+                Source="../Resources/Images/Ellipse-3.png"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Margin="125,60,0,35">
+            </Image>
+            <Button Command="{Binding BackCommand}" Style="{StaticResource ImageButtonStyle}" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,-25,0,0">
+                <Image Source="/Resources/Images/BackArrow.png" Stretch="Uniform"/>
+            </Button>
+        </Grid>
+    </Border>
+</UserControl>

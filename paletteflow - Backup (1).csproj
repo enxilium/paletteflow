@@ -13,26 +13,13 @@
     <None Remove="Resources\Fonts\JosefinSans-VariableFont_wght.ttf" />
     <None Remove="Resources\Fonts\JosefinSlab-Italic-VariableFont_wght.ttf" />
     <None Remove="Resources\Fonts\JosefinSlab-VariableFont_wght.ttf" />
-    <None Remove="Resources\Images\AboutButton.png" />
-    <None Remove="Resources\Images\BackArrow.png" />
-    <None Remove="Resources\Images\ColorInfoButton.png" />
-    <None Remove="Resources\Images\ContactButton.png" />
     <None Remove="Resources\Images\Ellipse-1.png" />
     <None Remove="Resources\Images\Ellipse-2.png" />
-    <None Remove="Resources\Images\Ellipse-3.png" />
-    <None Remove="Resources\Images\Ellipse-4.png" />
-    <None Remove="Resources\Images\Ellipse-5.png" />
     <None Remove="Resources\Images\Ellipse.png" />
-    <None Remove="Resources\Images\NewPaletteButton.png" />
-    <None Remove="Resources\Images\Palette.png" />
-    <None Remove="Resources\Images\SavedPalettesButton.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.1" />
-    <PackageReference Include="MaterialDesignColors" Version="3.1.0" />
-    <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,22 +27,13 @@
     <Resource Include="Resources\Fonts\JosefinSans-VariableFont_wght.ttf" />
     <Resource Include="Resources\Fonts\JosefinSlab-Italic-VariableFont_wght.ttf" />
     <Resource Include="Resources\Fonts\JosefinSlab-VariableFont_wght.ttf" />
-    <Resource Include="Resources\Images\AboutButton.png" />
-    <Resource Include="Resources\Images\BackArrow.png" />
-    <Resource Include="Resources\Images\ColorInfoButton.png" />
-    <Resource Include="Resources\Images\ContactButton.png" />
     <Resource Include="Resources\Images\Ellipse-1.png" />
     <Resource Include="Resources\Images\Ellipse-2.png" />
-    <Resource Include="Resources\Images\Ellipse-3.png" />
-    <Resource Include="Resources\Images\Ellipse-4.png" />
-    <Resource Include="Resources\Images\Ellipse-5.png" />
     <Resource Include="Resources\Images\Ellipse.png" />
-    <Resource Include="Resources\Images\NewPaletteButton.png" />
-    <Resource Include="Resources\Images\Palette.png" />
-    <Resource Include="Resources\Images\SavedPalettesButton.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="NewFolder\" />
     <Folder Include="Views\Modules\" />
   </ItemGroup>
 
